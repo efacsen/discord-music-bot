@@ -12,11 +12,7 @@ module.exports.registerPlayerEvents = (player) => {
     });
 
     player.on("trackAdd", (queue, track) => {
-        queue.metadata.send(`🎶 | Track **${track.title}** queued!`);
-    });
-
-    player.on("trackEnd", (queue, track) => {
-        queue.metadata.send(`🎶 | Track **${track.title}** queued!`);
+        queue.metadata.send(`🎶 | Track **${track.title}** added!`);
     });
 
     player.on("botDisconnect", (queue) => {
@@ -28,7 +24,7 @@ module.exports.registerPlayerEvents = (player) => {
     });
 
     player.on("queueEnd", (queue) => {
-        queue.metadata.send("✅ | Queue finished!");
+        queue.metadata.send("✅ | Playlist finished!");
     });
 
 
