@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 const path = require('path');
-const { SlashCreator, GatewayServer } = require('slash-create');
+const { SlashCreator, GatewayServer, Message } = require('slash-create');
 const { Client } = require('discord.js');
 const { Player } = require('discord-player');
 const { registerPlayerEvents } = require('./events');
@@ -11,7 +11,10 @@ dotenv.config();
 const client = new Client({
     intents: [
         'GUILDS',
-        'GUILD_VOICE_STATES'
+        'GUILD_VOICE_STATES',
+        'GUILD_MESSAGES',
+        'GUILD_MESSAGE_REACTIONS'
+
     ]
 });
 
@@ -28,6 +31,10 @@ client.on('ready', () => {
 
     console.log('Generating docs...');
     generateDocs(creator.commands);
+});
+
+client.on('messageCreate', (msg) => {
+    console.log(msg.content);
 });
 
 creator

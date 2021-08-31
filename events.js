@@ -15,6 +15,10 @@ module.exports.registerPlayerEvents = (player) => {
         queue.metadata.send(`🎶 | Track **${track.title}** queued!`);
     });
 
+    player.on("trackEnd", (queue, track) => {
+        queue.metadata.send(`🎶 | Track **${track.title}** queued!`);
+    });
+
     player.on("botDisconnect", (queue) => {
         queue.metadata.send("❌ | I was manually disconnected from the voice channel, clearing queue!");
     });
@@ -26,5 +30,6 @@ module.exports.registerPlayerEvents = (player) => {
     player.on("queueEnd", (queue) => {
         queue.metadata.send("✅ | Queue finished!");
     });
+
 
 };
