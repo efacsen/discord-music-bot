@@ -23,7 +23,7 @@ module.exports = class extends SlashCommand {
         content: '❌ | No music is being played!',
       });
     const currentTrack = queue.current;
-    const tracks = queue.tracks.slice(0, 10).map((m, i) => {
+    const tracks = queue.tracks.slice(0, 30).map((m, i) => {
       return `${i + 1}. ${m.author} - ${m.title} ([Source](${m.url}))`;
     });
 
