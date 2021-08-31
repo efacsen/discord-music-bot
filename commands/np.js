@@ -25,14 +25,14 @@ module.exports = class extends SlashCommand {
             embeds: [
                 {
                     title: "Now Playing",
-                    description: `🎶 | **${queue.current.title}**! (\`${perc.progress}%\`)`,
+                    description: `🎶 | **${queue.current.author} - ${queue.current.title}**! ([Go to Source](${queue.current.url})) (\`${perc.progress}%\`)`,
                     fields: [
                         {
                             name: "\u200b",
                             value: progress
                         }
                     ],
-                    color: 0xffffff
+                    color: 0xffaaff
                 }
             ]
         });
