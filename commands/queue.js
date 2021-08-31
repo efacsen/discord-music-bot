@@ -24,14 +24,18 @@ module.exports = class extends SlashCommand {
       });
     const currentTrack = queue.current;
     const tracks = queue.tracks.slice(0, 10).map((m, i) => {
-      return `${i + 1}. **${m.title}** ([link](${m.url}))`;
+      return `${i + 1}. ${m.author} - ${m.title} ([Source](${m.url}))`;
     });
 
     return void ctx.sendFollowUp({
       embeds: [
         {
           title: 'Playlist:',
-          description: `${tracks.join('\n')}${
+          description: `**Now playing:**\n **-->** *${currentTrack.author} - ${
+            currentTrack.title
+          } (${currentTrack.duration}) - ([Source](${
+            currentTrack.url
+          }))* **<--**\n**Next:**\n${tracks.join('\n')}${
             queue.tracks.length > tracks.length
               ? `\n...${
                   queue.tracks.length - tracks.length === 1
@@ -41,11 +45,17 @@ module.exports = class extends SlashCommand {
               : ''
           }`,
           color: 0xffaaff,
+        //   thumbnail: `https://bangsaonline.com/images/uploads/berita/700/28544e86b46d6e9674730048057164df.jpg`, FIND A WAY TO ESCAPE ":"??
           fields: [
             {
-              name: '---- Total Time ----',
+              name: 'Total Songs',
+              value: `${queue.tracks.length} songs`,
+              inline: true,
+            },
+            {
+              name: 'Total Duration',
               value: `${Math.floor(queue.totalTime / 60000)} minutes`,
-              inline: true
+              inline: true,
             },
           ],
         },
