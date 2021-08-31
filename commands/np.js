@@ -24,8 +24,8 @@ module.exports = class extends SlashCommand {
         return void ctx.sendFollowUp({
             embeds: [
                 {
-                    title: "Now Playing",
-                    description: `🎶 | **${queue.current.author} - ${queue.current.title}**! ([Go to Source](${queue.current.url})) (\`${perc.progress}%\`)`,
+                    title: "🎶 Now Playing",
+                    description: `**${queue.current.author} - ${queue.current.title}**!  (\`${perc.progress}%\`) ([Source](${queue.current.url}))`,
                     fields: [
                         {
                             name: "\u200b",
