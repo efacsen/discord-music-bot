@@ -43,12 +43,7 @@ module.exports = class extends SlashCommand {
           color: 0xffaaff,
           fields: [
             {
-              name: 'Now Playing',
-              value: `🎶 | **${currentTrack.title}** ([link](${currentTrack.url}))`,
-              inline: true,
-            },
-            {
-              name: 'Total Time',
+              name: '---- Total Time ----',
               value: `${Math.floor(queue.totalTime / 60000)} minutes`,
               inline: true
             },
