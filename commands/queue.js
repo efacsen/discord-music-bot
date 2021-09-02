@@ -45,7 +45,7 @@ module.exports = class extends SlashCommand {
               : ''
           }`,
           color: 0xffaaff,
-          thumbnail: {url:`https://bangsaonline.com/images/uploads/berita/700/28544e86b46d6e9674730048057164df.jpg` },
+          thumbnail: {url:`${currentTrack.thumbnail}` },
           fields: [
             {
               name: 'Total Songs',
