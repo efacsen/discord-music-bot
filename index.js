@@ -33,6 +33,7 @@ client.on('ready', () => {
 
     console.log('Generating docs...');
     generateDocs(creator.commands);
+    console.log('Docs generated!');
 });
 
 client.on('messageCreate', (msg) => {
