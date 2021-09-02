@@ -7,9 +7,9 @@ module.exports.registerPlayerEvents = (player) => {
         console.log(`[${queue.guild.name}] Error emitted from the connection: ${error.message}`);
     });
 
-    player.on("trackStart", (queue, track) => {
-        queue.metadata.send(`🎶 | Started playing: **${track.title}** in **${queue.connection.channel.name}**!`);
-    });
+    // player.on("trackStart", (queue, track) => {
+    //     queue.metadata.send(`🎶 | Started playing: **${track.title}** in **${queue.connection.channel.name}**!`);
+    // });
 
     player.on("trackAdd", (queue, track) => {
         queue.metadata.send(`🎶 | Track **${track.title}** added!`);

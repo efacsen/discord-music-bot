@@ -1,10 +1,11 @@
 const dotenv = require('dotenv');
 const path = require('path');
 const { SlashCreator, GatewayServer, Message } = require('slash-create');
-const { Client } = require('discord.js');
+const { MessageEmbed, Client } = require('discord.js');
 const { Player } = require('discord-player');
 const { registerPlayerEvents } = require('./events');
 const { generateDocs } = require('./docs');
+// const { MessageButton } = require('discord-buttons');
 
 dotenv.config();
 
@@ -14,9 +15,10 @@ const client = new Client({
         'GUILD_VOICE_STATES',
         'GUILD_MESSAGES',
         'GUILD_MESSAGE_REACTIONS'
-
+        
     ]
 });
+// require('discord-buttons')(client)
 
 client.player = new Player(client);
 registerPlayerEvents(client.player);
