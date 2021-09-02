@@ -30,10 +30,12 @@ const creator = new SlashCreator({
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-
+    
     console.log('Generating docs...');
     generateDocs(creator.commands);
     console.log('Docs generated!');
+    client.user.setActivity('Kantor Camat', { type: 'COMPETING' });
+    client.user.setStatus('dnd');
 });
 
 client.on('messageCreate', (msg) => {
@@ -52,6 +54,7 @@ if (process.env.DISCORD_GUILD_ID) creator.syncCommandsIn(process.env.DISCORD_GUI
 else creator.syncCommands();
 
 client.login(process.env.DISCORD_CLIENT_TOKEN);
+
 
 module.exports.client = client;
 module.exports.creator = creator;
