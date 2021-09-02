@@ -26,7 +26,7 @@ module.exports = class extends SlashCommand {
     const tracks = queue.tracks.slice(0, 30).map((m, i) => {
       return `${i + 1}. ${m.author} - ${m.title} ([Source](${m.url}))`;
     });
-
+    //TODO: Mask the source url behind the title
     return void ctx.sendFollowUp({
       embeds: [
         {
@@ -49,7 +49,7 @@ module.exports = class extends SlashCommand {
           fields: [
             {
               name: 'Total Songs',
-              value: `${queue.tracks.length} songs`,
+              value: `${queue.tracks.length + 1} songs`,
               inline: true,
             },
             {
