@@ -45,7 +45,7 @@ module.exports = class extends SlashCommand {
               : ''
           }`,
           color: 0xffaaff,
-          //   thumbnail: `https://bangsaonline.com/images/uploads/berita/700/28544e86b46d6e9674730048057164df.jpg`, FIND A WAY TO ESCAPE ":"??
+          thumbnail: {url:`https://bangsaonline.com/images/uploads/berita/700/28544e86b46d6e9674730048057164df.jpg` },
           fields: [
             {
               name: 'Total Songs',
@@ -57,12 +57,6 @@ module.exports = class extends SlashCommand {
               value: `${Math.floor(queue.totalTime / 60000)} minutes`,
               inline: true,
             },
-            // To be added
-            // {
-            //   name: 'Play Mode',
-            //   value: `${ctx.options.mode} `,
-            //   inline: true,
-            // },
           ],
         },
       ],
