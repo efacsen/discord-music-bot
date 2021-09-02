@@ -24,6 +24,7 @@ Here are all the available commands in the bot!
 |   **/loop**    |          Sets loop mode           |  \<mode>  |
 |    **/np**     | See what's currently being played |           |
 |   **/pause**   |      Pause the current song       |           |
+| **/playlist**  |         See the playlist          |           |
 |   **/play**    |     Plays a song from youtube     | \<query>  |
 |   **/queue**   |           See the queue           |           |
 |  **/resume**   |      Resume the current song      |           |
